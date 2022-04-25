@@ -1,0 +1,273 @@
+---
+title: "The impact of COVID-19 vaccines on the Case Fatality Rate: The importance of monitoring breakthrough infections"
+subtitle: "April 9, 2022 PAA Annual Meeting "
+author: "Vanessa di Lego<sup>1</sup> <br> Miguel Sánchez-Romero <sup>1</sup> <sup>2</sup><br> Alexia Prskawetz<sup>1</sup> <sup>2</sup> <sup>3</sup>"
+institute: "1 Wittgenstein Centre (IIASA, OeAW, University of Vienna) <br> Vienna Institute of Demography at the Austrian Academy of Sciences <br> 2 International Institute for Applied Systems Analysis, Laxenburg, Austria <br> 3 Institute of Statistics and Mathematical Methods in Economics, Research Unit Economics, TU Wien"
+#date: "April 9, 2022"
+output:
+  xaringan::moon_reader:
+    self_contained: true
+    chakra: libs/remark-latest.min.js
+    lib_dir: libs
+    css: ["paaCSS.css","WIC-fonts.css"]
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+---
+
+```{r setup, include=FALSE}
+options(htmltools.preserve.raw = FALSE)
+
+```
+
+class: center, middle
+
+# Motivation
+
+---
+
+class: middle
+      
+Fig. 1 Case Fatality Rate (CFR) and %Fully Vaccinated Trajectories
+      
+  <div class="container">
+  <img class="under" src="C:/Users/vdile/Documents/Git/CFR_present/img/vax_change.gif"/> 
+        <img class="over" src="C:/Users/vdile/Documents/Git/CFR_present/img/cfr_change.gif"/>  
+  </div>
+        
+.remark-slide-content3[Source: Our World in Data (Mathieu et al. 2021)] 
+
+---
+
+ Fig. 1 Case Fatality Rate (CFR) and %Fully Vaccinated Trajectories
+      
+```{r fig1, fig.align = 'center', out.width = "95%", echo=F}
+      
+      knitr::include_graphics(here::here("img", "cfr_all_paa.png"))
+      
+```
+
+.remark-slide-content3[Source: Our World in Data (Mathieu et al. 2021)] 
+---
+class: 
+
+Fig. 2 Panel (A) %Case-Fatality Rate (CFR); Panel (B) Share of fully vaccinated persons (%). Austria, by age, from Jan to Dec 2021
+
+```{r fig2, fig.align = 'center', out.width = "95%", echo=F}
+
+knitr::include_graphics(here::here("img", "fig2.png"))
+
+```
+.remark-slide-content3[Source: The number of people vaccinated at each group is taken from BMSGPK, Österreichisches COVID-19 Open Data Informationsportal (2021)]
+
+---
+
+```{r figvax, fig.align = 'right', out.width = "50%", echo=F}
+
+knitr::include_graphics(here::here("img", "vaccine.png"))
+
+```
+
+# What is driving this pattern in the CFR?
+ ## Are vaccines not being effective in reducing deaths?
+
+---
+
+class: inverse, center, middle
+
+# The Sensitivity of the Case-Fatality Rate (CFR) as an Indicator
+
+---
+
+class:remark-slide-content
+
+## The CFR is particularly sensitive to <sup>1</sup>:
+
+
+.pull-left-1[
+
+- demographic factors
+
+
+- delays in reported cases
+
+
+- testing policies
+
+]
+
+--
+
+
+.pull-right-2[.content-box-blue[
+
+ $${CFR}_{t,a}=\frac{\text{Deaths}_{t,a}}{\text{Reported Cases}_{t,a}}$$
+
+
+ 
+#### .red[Any] factor that impacts the number of .red[confirmed deaths] from a disease and the number of .red[reported cases] in a given time ###
+ 
+]]
+
+
+.footnote[[1] (Dowd et al. 2020; Rajgor et al. 2020; Goldstein and Lee 2020; Green et al. 2020; Harman et al. 2021; Smith 2021; Luo et al. 2021; Undurraga et al. 2021)] 
+
+---
+
+class: inverse, center, middle
+
+# The CFR in the presence of Vaccines
+
+---
+
+class: middle, center, remark-slide-content
+
+.content-box-blue[
+$${CFR}_{t,a}=\frac{\mathcal{D}^{U}_{t,a}+\mathcal{D}^{V}_{t,a}}{d^{U}_{t,a}\mathcal{I}^{U}_{t,a}+\color{red}{d^{V}_{t,a}\mathcal{I}^{V}_{t,a}}}$$
+]
+
+--
+
+.content-box-blue[
+$$\text{CFR}_{t,a}=\text{CFR}^{U}_{t,a}(1-\color{red}{\gamma_{t,a}})+\text{CFR}^{V}_{t,a}\color{red}{\gamma_{t,a}}$$]
+
+
+--
+
+$\text{CFR}_{t,a}$ being the weighted sum of $\text{CFR}^{U}_{t,a}$ and $\text{CFR}^{V}_{t,a}$ with weights $\color{red}{\gamma_{t,a}}$:
+
+.pull-left-1[.content-box-red[
+$$\gamma_{t,a}= \frac{\color{red}{d^{V}_{t,a}\mathcal{I}^{V}_{t,a}}}{{d^{U}_{t,a}\mathcal{I}^{U}_{t,a}+\color{red}{d^{V}_{t,a}\mathcal{I}^{V}_{t,a}}}}$$]]
+
+--
+
+.pull-right-2[ 
+the ratio between the total number of COVID vaccine .red[breakthroughs] and the total number of COVID-associated ever infected and detected cases] 
+
+
+---
+
+class: inverse, center, middle, remark-slide-content
+
+.content-box-blue[
+$$\text{CFR}_{t,a}=\text{CFR}^{U}_{t,a}(1-\color{red}{\gamma_{t,a}})+\text{CFR}^{V}_{t,a}\color{red}{\gamma_{t,a}}$$]
+
+--
+
+.pull-left-1[.content-box-red[
+$$\gamma_{t,a}= 0$$ ]]
+
+--
+
+.pull-right-1[
+No .red[breakthrough] cases: $\text{CFR}_{t,a} = \text{CFR}^{U}_{t,a}$]
+
+--
+
+.pull-left-1[.content-box-red[
+$$\gamma_{t,a}\neq0$$ ]]
+
+--
+
+.pull-right-1[
+How does  $\text{CFR}^{V}_{t,a}\gamma_{t,a}$ affect the $\text{CFR}_{t,a}$?]
+
+---
+
+
+.pull-left-2[.content-box-blue[
+$$\text{CFR}^{V}_{t,a}=\text{CFR}^{U}_{t,a}\frac{(1-\color{red}{\beta_{a}})}{\color{red}{Z_{t,a}}}$$]]
+
+--
+
+.pull-right-1[ $\beta_{a}$ = effectiveness of vaccines in preventing deaths
+
+$Z_{t,a}$ = ratio of detection rates between the vaccinated and the unvaccinated
+
+if $Z_{t,a}=1$, the rate of detection among vaccinated and unvaccinated is the same]
+
+--
+
+.pull-left-2[.content-box-red[
+$$(1 − \beta_{a} ) = Z_{t,a}$$
+the CFR will remain
+**unchanged**, regardless the fact that the case fatality rate of the vaccinated is
+**lower** than the case fatality rate of the unvaccinated. ]]
+
+--
+
+.pull-left-2[.content-box-purple[the **lower** $\beta_{a}$, the **higher** $Z_{t,a}$ to keep CFR **constant**. the **higher** $\beta_{a}$, the **lower** $Z_{t,a}$ to keep CFR constant
+ ]]
+
+.footnote[[2] Sánchez-Romero et al. 2021] 
+
+---
+
+We illustrate the effect CFR scenarios that result from a different combination of $\beta_{a}$ and $Z_{t,a}$ values.
+
+- Focus on the 84+, that has the highest risk of dying and was the first vaccinated. 
+
+- Use Austria as case study for which we have detailed data on deaths, infections, vaccination status and testing by age; Consistent and unique testing policy.
+
+- vaccine effectiveness in reducing deaths for ages above 84 is set at 0.85<sup>3</sup> 
+
+.footnote[[3] Hall et al. 2021]
+
+---
+
+class: center, middle
+
+# Results
+
+---
+
+.remark-slide-content2[Figure 3. Evolution of the %CFR for the age group 84+ in Austria (Jan-Dec 2021) by three different parameter values of]   $\beta_{(84+)}$ .remark-slide-content2[and] $Z_{(t,84+)}$
+
+```{r fig3, fig.align = 'center', out.width = "90%", echo=F}
+
+knitr::include_graphics(here::here("img", "sim_adj.png"))
+
+```
+.remark-slide-content3[Source: Simulated CFR values are calculated using data from (Richter et al. 2020b, a)and BMSGPK, COVID-19 Open Data Informationsportal (2021)]
+
+---
+class: middle
+
+# Discussion
+
+- CFR decline may **not** imply that vaccines are being effective in reducing deaths
+--
+
+- A constant CFR can **still** mean that vaccines are effective in reducing deaths
+--
+
+- Detecting infections among both the vaccinated and unvaccinated population is key
+--
+
+## Take-away: unless vaccinated people are **also** tested, it is hard to use the CFR as an indicator for monitoring the pandemic
+
+---
+
+class: inverse, center, middle
+
+Fig. 4 Financial Times Graph on the CFR in Hong Kong: What is the CFR telling us?
+
+```{r fig4, fig.align = 'center', echo=F, out.width="100%"}
+
+knitr::include_graphics(here::here("img", "Ft_HK.png"))
+
+```
+
+---
+class: 
+
+Thank you!
+
+```{r fig5, fig.align = 'center', out.width = "90%", echo=F}
+
+knitr::include_graphics(here::here("img", "simple_wrong.jpg"))
+
+```
+
